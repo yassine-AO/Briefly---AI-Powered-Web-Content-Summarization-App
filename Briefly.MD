@@ -24,10 +24,10 @@
 
 - **Programming Language:** Python 🐍
 - **Framework:** Flask 🌶️
-- **Web Scraping:** Selenium, BeautifulSoup 🕵️‍♂️
+- **Web Scraping:** Selenium, BeautifulSoup 🕵️‍♂
 - **Summarization Model:** LLaMA 3.1-70B Versatile (via Groq API) 🦙
-- **Frontend:** HTML, CSS (Bootstrap, custom CSS), JavaScript (jQuery) 🎨
-- **Deployment:** AWS EC2, Gunicorn, Nginx 🚀
+- **Frontend:** HTML, CSS (Bootstrap, custom CSS), JavaScript (jQuery) 
+- **Deployment:** AWS EC2, Gunicorn, Nginx 
 - **Miscellaneous:** jsPDF, html2canvas (for downloads) 📄
 
 ## Application Architecture 🏗️
@@ -36,25 +36,25 @@
 
 The frontend of Briefly is designed for simplicity and user engagement. Utilizing Bootstrap for responsiveness and jQuery for AJAX interactions, the UI is both intuitive and functional. Key features include:
 
-- **Responsive Design:** The UI adapts to various screen sizes, ensuring usability across devices. 📱💻
-- **Interactive Elements:** Dynamic text effects and a humorous loading screen keep users engaged. 😂🎯
-- **Ease of Use:** A clean, minimalist design ensures users can easily navigate the app and get summaries quickly. 💡
+- **Responsive Design:** The UI adapts to various screen sizes, ensuring usability across devices. 
+- **Interactive Elements:** Dynamic text effects and a humorous loading screen keep users engaged. 
+- **Ease of Use:** A clean, minimalist design ensures users can easily navigate the app and get summaries quickly. 
 
 ### Backend 🔧
 
 The backend is built using Flask, providing a robust and scalable foundation for the application. Key backend components include:
 
-- **Routing:** Flask handles all routing, directing user requests to the appropriate views and functions. 🚦
-- **Server-Side Logic:** Python is used for all server-side logic, including interacting with the Groq API for summarization. 🧠
-- **Session Management:** User sessions are securely managed to ensure privacy and smooth operation. 🔒
+- **Routing:** Flask handles all routing, directing user requests to the appropriate views and functions. 
+- **Server-Side Logic:** Python is used for all server-side logic, including interacting with the Groq API for summarization. 
+- **Session Management:** User sessions are securely managed to ensure privacy and smooth operation. 
 
 ### Web Scraping 🕸️
 
 Briefly uses Selenium and BeautifulSoup to scrape web content. Here's how it works:
 
-- **Selenium:** A headless browser powered by Selenium is used to load web pages and handle dynamic content. 🌐
-- **BeautifulSoup:** Once the page is loaded, BeautifulSoup parses the HTML, extracting relevant text while ignoring ads and navigation menus. 📝
-- **Efficiency:** The scraping process is optimized to handle various types of web content, ensuring comprehensive data extraction. 🚀
+- **Selenium:** A headless browser powered by Selenium is used to load web pages and handle dynamic content. 
+- **BeautifulSoup:** Once the page is loaded, BeautifulSoup parses the HTML, extracting relevant text while ignoring ads and navigation menus. 
+- **Efficiency:** The scraping process is optimized to handle various types of web content, ensuring comprehensive data extraction. 
 
 ### Summarization ✍️
 
@@ -75,26 +75,26 @@ Briefly includes an AI assistant powered by the same Groq model. The assistant o
 
 After generating a summary, users can download it in various formats:
 
-- **PDF:** Generated using jsPDF for high-quality documents. 📄
-- **Text File:** A plain text version of the summary. 📝
-- **JSON:** For structured data use cases. 📊
-- **Image:** Created using html2canvas, ideal for visual presentations. 🖼️
+- **PDF:** Generated using jsPDF for high-quality documents. 
+- **Text File:** A plain text version of the summary. 
+- **JSON:** For structured data use cases. 
+- **Image:** Created using html2canvas, ideal for visual presentations. 
 
 ## Deployment Technologies 🚀
 
 Briefly is deployed using robust and scalable technologies to ensure high availability and performance. The key deployment components include:
 
 - **AWS EC2:** The application is hosted on an Amazon Web Services EC2 instance, providing a reliable and scalable infrastructure. ☁️
-- **Gunicorn:** The WSGI server used to serve the Flask application, ensuring efficient handling of requests. 🧩
+- **Gunicorn:** The WSGI server used to serve the Flask application, ensuring efficient handling of requests. 
 - **Nginx:** Acts as a reverse proxy, managing traffic between users and the Gunicorn server, improving security and performance. 🛡️
-- **Systemd:** Used to manage the Gunicorn service, ensuring that the application starts automatically and remains available. ⚙️
+- **Systemd:** Used to manage the Gunicorn service, ensuring that the application starts automatically and remains available. 
 
 ## Security and Privacy 🔐
 
-- **Data Security:** All processing is done in real-time, and Briefly does not store any personal information or URLs. 🔒
-- **Secure Communication:** The application can be configured to use HTTPS for secure communication, ensuring that all data transfers between the client and server are encrypted. 🔐
-- **AWS Security:** AWS provides robust security features, including key management and firewall settings, to protect the EC2 instance and the application. 🛡️
+- **Data Security:** All processing is done in real-time, and Briefly does not store any personal information or URLs. 
+- **Secure Communication:** The application can be configured to use HTTPS for secure communication, ensuring that all data transfers between the client and server are encrypted. 
+- **AWS Security:** AWS provides robust security features, including key management and firewall settings, to protect the EC2 instance and the application. 
 
 ## Conclusion 🎉
 
-Briefly is a comprehensive and efficient solution for summarizing web content, built with modern technologies and deployed securely on AWS. This documentation provides a detailed overview of the architecture and technologies used, offering insights into the development and deployment process. 🚀
+Briefly is a comprehensive and efficient solution for summarizing web content, built with modern technologies and deployed securely on AWS. This documentation provides a detailed overview of the architecture and technologies used, offering insights into the development and deployment process. 
