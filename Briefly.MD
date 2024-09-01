@@ -1,6 +1,6 @@
 # Briefly: Comprehensive Documentation 🚀
 
-🌐 **Check out the live app at [briefly.com](https://briefly.com)!** 🌐
+🌐 **Check out the live app at [briefly.com](https://briefly.uk.to)!** 🌐
 
 ## Overview
 
