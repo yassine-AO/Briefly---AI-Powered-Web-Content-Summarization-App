@@ -4,7 +4,9 @@
 
 ## Overview
 
-**Briefly** is a powerful web application designed to extract and summarize web content efficiently. Built using Flask, the application leverages advanced web scraping techniques and integrates with a cutting-edge language model to deliver concise, well-structured summaries. This documentation provides an in-depth look at the technical architecture and the technologies used in creating and hosting Briefly.
+**Briefly** is a web application that scrapes web content and YouTube videos, processes the content using an AI model, and generates summaries. It is built using Flask and advanced web technologies, offering a seamless experience for summarizing text and video content. Below is a technical overview, highlighting key features, architecture, and code snippets.
+
+---
 
 ## Table of Contents
 
@@ -13,105 +15,133 @@
    - [Frontend](#frontend) 🎨
    - [Backend](#backend) 🔧
    - [Web Scraping](#web-scraping) 🕸️
-   - [Summarization](#summarization) ✍️
-   - [AI Assistant](#ai-assistant) 🤖
-   - [B.Watch (YouTube Summarization)](#b-watch-youtube-summarization) 📺
+   - [YouTube Summarization](#youtube-summarization) 📺
    - [Download Options](#download-options) 📥
 3. [Deployment Technologies](#deployment-technologies) 🚀
 4. [Security and Privacy](#security-and-privacy) 🔐
-5. [Conclusion](#conclusion) 🎉
+5. [Key Code Snippets](#key-code-snippets) 💻
+6. [Conclusion](#conclusion) 🎉
+
+---
 
 ## Technical Stack 🛠️
 
-- **Programming Language:** Python 🐍
-- **Framework:** Flask 🌶️
-- **Web Scraping:** Selenium, BeautifulSoup 🕵️‍♂
-- **Video Summarization:** yt-dlp for metadata extraction 🎥
-- **Summarization Model:** LLaMA 3.1-70B Versatile (via Groq API) 🦙
-- **Frontend:** HTML, CSS (Bootstrap, custom CSS), JavaScript (jQuery)
-- **Deployment:** AWS EC2, Gunicorn, Nginx
-- **Miscellaneous:** jsPDF, html2canvas (for downloads) 📄
+- **Language**: Python 🐍
+- **Framework**: Flask 🌶️
+- **Web Scraping**: Selenium, BeautifulSoup 🕸️
+- **YouTube Summarization**: yt-dlp, LLaMA 3.1-70B via Groq API 📹
+- **Frontend**: HTML, CSS, JavaScript (jQuery)
+- **Database**: MySQL (SQLAlchemy ORM)
+- **Deployment**: AWS EC2, Nginx, Gunicorn 🚀
+
+---
 
 ## Application Architecture 🏗️
 
 ### Frontend 🎨
 
-The frontend of Briefly is designed for simplicity and user engagement. Utilizing Bootstrap for responsiveness and jQuery for AJAX interactions, the UI is both intuitive and functional. Key features include:
-
-- **Responsive Design:** The UI adapts to various screen sizes, ensuring usability across devices.
-- **Interactive Elements:** Dynamic text effects and a humorous loading screen keep users engaged.
-- **Ease of Use:** A clean, minimalist design ensures users can easily navigate the app and get summaries quickly.
+- **Bootstrap-based UI**: Responsive and simple to navigate.
+- **Interactive Elements**: Engaging features such as a dynamic loading screen and smooth transitions.
+- **AJAX Interactions**: Allows asynchronous updates, improving user experience.
 
 ### Backend 🔧
 
-The backend is built using Flask, providing a robust and scalable foundation for the application. Key backend components include:
-
-- **Routing:** Flask handles all routing, directing user requests to the appropriate views and functions.
-- **Server-Side Logic:** Python is used for all server-side logic, including interacting with the Groq API for summarization.
-- **Session Management:** User sessions are securely managed to ensure privacy and smooth operation.
+The **Flask** backend handles routes, session management, and the integration with the **Groq API** for AI-based summarization.
 
 ### Web Scraping 🕸️
 
-Briefly uses Selenium and BeautifulSoup to scrape web content. Here's how it works:
+Briefly utilizes **Selenium** to render dynamic websites and **BeautifulSoup** to extract relevant content. After scraping, the content is sent to the **Groq API** for summarization using a pre-trained model.
 
-- **Selenium:** A headless browser powered by Selenium is used to load web pages and handle dynamic content.
-- **BeautifulSoup:** Once the page is loaded, BeautifulSoup parses the HTML, extracting relevant text while ignoring ads and navigation menus.
-- **Efficiency:** The scraping process is optimized to handle various types of web content, ensuring comprehensive data extraction.
+### YouTube Summarization 📺
 
-### Summarization ✍️
-
-The core feature of Briefly is its ability to generate accurate, concise summaries. This is achieved through:
-
-- **Groq API Integration:** The scraped content is sent to the Groq API, which uses the LLaMA 3.1-70B Versatile model to generate summaries. 🦙
-- **LLMChain:** The summarization process is handled within an LLMChain, ensuring context-aware and coherent outputs. 🧠
-- **Markdown Formatting:** Summaries are structured in Markdown format, providing clear, organized results. 📄
-
-### AI Assistant 🤖
-
-Briefly includes an AI assistant powered by the same Groq model. The assistant offers:
-
-- **Customization:** Users can modify summaries, translate them into different languages, or ask follow-up questions. 🌍
-- **Voice Interaction:** The AI assistant supports voice commands, making interactions hands-free and more intuitive. 🎙️
-
-### B.Watch (YouTube Summarization) 📺
-
-**B.Watch** is an innovative feature within Briefly that enables users to summarize YouTube videos with a simple URL input. This feature works seamlessly as follows:
-
-1. **Metadata Extraction:** Upon receiving a YouTube URL, **B.Watch** leverages **yt-dlp**, a powerful tool for extracting key video details, such as:
-   - Title, description, likes, and comments count.
-   - Video views, uploader details, and relevant tags.
-   - The first available transcript (if present), ensuring context-rich summarization.
-
-2. **Summarization:** Once the video data is gathered, it is processed using the **LLaMA 3.1-70B Versatile** model via the Groq API. This generates a clear, concise summary of the video content, capturing essential points and insights.
-
-3. **AI Interaction:** Users can further interact with the AI to refine the summary, ask follow-up questions about the video, or translate the summary into various languages—just as they would with any web page summary. **B.Watch** ensures that even video content is easily digestible and summarized with the same high accuracy and convenience.
-
-This feature broadens the scope of Briefly beyond static text, making it an essential tool for summarizing dynamic multimedia content from platforms like YouTube.
+**B.Watch** processes YouTube video metadata with **yt-dlp** and generates a structured summary using LLaMA 3.1-70B via the Groq API. This allows users to digest video content without watching it.
 
 ### Download Options 📥
 
-After generating a summary, users can download it in various formats:
+Summarized content is available for download in multiple formats:
+- **PDF**: Generated using **jsPDF**.
+- **Text Files**: For simple text summaries.
+- **Image Format**: Converted to an image using **html2canvas**.
 
-- **PDF:** Generated using jsPDF for high-quality documents.
-- **Text File:** A plain text version of the summary.
-- **JSON:** For structured data use cases.
-- **Image:** Created using html2canvas, ideal for visual presentations.
+---
 
 ## Deployment Technologies 🚀
 
-Briefly is deployed using robust and scalable technologies to ensure high availability and performance. The key deployment components include:
+- **AWS EC2**: Ensures scalable and reliable hosting.
+- **Nginx**: Serves as a reverse proxy, optimizing performance.
+- **Gunicorn**: Used for handling requests efficiently.
 
-- **AWS EC2:** The application is hosted on an Amazon Web Services EC2 instance, providing a reliable and scalable infrastructure. ☁️
-- **Gunicorn:** The WSGI server used to serve the Flask application, ensuring efficient handling of requests.
-- **Nginx:** Acts as a reverse proxy, managing traffic between users and the Gunicorn server, improving security and performance. 🛡️
-- **Systemd:** Used to manage the Gunicorn service, ensuring that the application starts automatically and remains available.
+---
 
 ## Security and Privacy 🔐
 
-- **Data Security:** All processing is done in real-time, and Briefly does not store any personal information or URLs.
-- **Secure Communication:** The application can be configured to use HTTPS for secure communication, ensuring that all data transfers between the client and server are encrypted.
-- **AWS Security:** AWS provides robust security features, including key management and firewall settings, to protect the EC2 instance and the application.
+- **Secure Communication**: The app uses HTTPS for secure data transmission.
+- **Logging & Monitoring**: SQLAlchemy logs user interactions, providing insights into app usage while maintaining privacy.
+
+---
+
+## Key Code Snippets 💻
+
+### 1. **YouTube Metadata Extraction**
+
+This function extracts metadata like title, description, views, and transcript from YouTube videos using **yt-dlp**.
+
+```python
+def get_youtube_metadata(youtube_url):
+    ydl_opts = {'format': 'bestaudio/best', 'quiet': True, 'noplaylist': True}
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(youtube_url, download=False)
+    
+    return {
+        'title': info.get('title'),
+        'description': info.get('description'),
+        'views': info.get('view_count'),
+        'transcript': extract_transcript(info)  # Fetch transcript if available
+    }
+```
+
+### 2. **Scraping Web Content**
+
+The function uses **Selenium** to scrape content from websites dynamically.
+
+```python
+def scrape_content(url):
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    driver.get(url)
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    driver.quit()
+    return soup.get_text()
+```
+
+### 3. **Summarizing Content with LLaMA via Groq API**
+
+This function takes scraped content and generates a structured summary using the **Groq API** and LLaMA model.
+
+```python
+def summarize_with_llama(content):
+    prompt = (
+        "Analyze the content and generate a concise summary. Ensure the summary is structured, capturing key points.\n\n"
+        f"Content: {content}"
+    )
+    response = groq_chat.predict(prompt)
+    return response
+```
+
+### 4. **Summarizing YouTube Video Metadata**
+
+The metadata of a YouTube video is summarized using the LLaMA model via the **Groq API**.
+
+```python
+def summarize_youtube_metadata(meta_data):
+    summary_prompt = f"Summarize the YouTube video based on the following metadata:\n{meta_data}"
+    return groq_chat.predict(summary_prompt)
+```
+
+---
 
 ## Conclusion 🎉
 
-Briefly is a comprehensive and efficient solution for summarizing web content, including YouTube videos via **B.Watch**. Built with modern technologies and deployed securely on AWS, it offers both powerful features and ease of use. This documentation provides a detailed overview of the architecture and technologies used, offering insights into the development and deployment process.
+**Briefly** is a robust, AI-driven summarization tool for both web content and YouTube videos. Built on a modern tech stack and hosted on AWS, it provides a reliable, fast, and user-friendly interface for generating summaries across different content types.
+
+With its powerful backend integration and advanced AI model, Briefly stands out as a comprehensive solution for content summarization, catering to both casual users and professionals alike.
+
