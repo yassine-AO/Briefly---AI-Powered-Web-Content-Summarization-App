@@ -10,7 +10,7 @@
 
 ## Table of Contents
 
-1. [Technical Stack 🛠️](## Technical Stack 🛠️)
+1. [Technical Stack 🛠️](## Technical Stack)
 2. [Application Architecture 🏗️](#application-architecture)
    - [Frontend 🎨](#frontend)
    - [Backend 🔧](#backend)
