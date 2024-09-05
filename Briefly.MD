@@ -1,3 +1,9 @@
+To enable proper redirection in Markdown, you need to ensure that your section titles match the format used in the links from the Table of Contents. Markdown link anchors (for sections) are case-insensitive and typically lowercase with spaces replaced by hyphens.
+
+Here's the corrected version of the document with proper anchors for redirection:
+
+---
+
 # Briefly: Comprehensive Documentation 🚀
 
 🌐 **Check out the live app at [briefly.uk.to](https://briefly.uk.to)!** 🌐
@@ -10,16 +16,16 @@
 
 ## Table of Contents
 
-1. [Technical Stack 🛠️](## Technical Stack)
-2. [Application Architecture 🏗️](#application-architecture)
-   - [Frontend 🎨](#frontend)
-   - [Backend 🔧](#backend)
-   - [Web Scraping 🕸️](#web-scraping)
-   - [YouTube Summarization 📺](#youtube-summarization)
-   - [Download Options 📥](#download-options)
-3. [Deployment Technologies 🚀](#deployment-technologies)
-4. [Security and Privacy 🔐](#security-and-privacy)
-5. [Conclusion 🎉](#conclusion)
+1. [Technical Stack 🛠️](#technical-stack-)
+2. [Application Architecture 🏗️](#application-architecture-)
+   - [Frontend 🎨](#frontend-)
+   - [Backend 🔧](#backend-)
+   - [Web Scraping 🕸️](#web-scraping-)
+   - [YouTube Summarization 📺](#youtube-summarization-)
+   - [Download Options 📥](#download-options-)
+3. [Deployment Technologies 🚀](#deployment-technologies-)
+4. [Security and Privacy 🔐](#security-and-privacy-)
+5. [Conclusion 🎉](#conclusion-)
 
 ---
 
@@ -128,3 +134,7 @@ All interactions are secure, with data transmitted over HTTPS. The app ensures p
 ## Conclusion 🎉
 
 **Briefly** is a powerful and flexible tool for summarizing both web content and YouTube videos. By integrating advanced AI models and using modern web scraping techniques, the app offers a user-friendly experience for professionals and casual users alike. Its deployment on AWS ensures scalability and high availability.
+
+---
+
+Now, the Table of Contents links should correctly redirect to the respective sections within the document.
