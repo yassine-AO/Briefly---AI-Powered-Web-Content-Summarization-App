@@ -1,9 +1,10 @@
 # Briefly: Comprehensive Documentation 🚀
-
+
+
 
 ## Overview
 
-**Briefly** is a web app designed for efficient web and YouTube content summarization, leveraging the Flask framework and integrating with an advanced AI language model. Below is a detailed overview of its architecture, deployment, and key features, with streamlined code snippets from the actual implementation.
+**Briefly** is a web app designed for efficient web and YouTube content summarization,(With RAG System) leveraging the Flask framework and integrating with an advanced AI language model. Below is a detailed overview of its architecture, deployment, and key features, with streamlined code snippets from the actual implementation.
 
 ---
 
